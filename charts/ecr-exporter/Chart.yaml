@@ -21,3 +21,21 @@ version: 0.0.1
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: 0.0.1
+
+keywords:
+  - prometheus
+  - ecr
+  - aws
+  - monitoring
+
+home: https://github.com/aws-exporters/charts/tree/main/charts/ecr-exporter
+
+sources:
+  - https://github.com/aws-exporters/ecr
+
+maintainers:
+  - name: js-timbirkett
+
+annotations:
+  artifacthub.io/changes: |
+    - initial release
