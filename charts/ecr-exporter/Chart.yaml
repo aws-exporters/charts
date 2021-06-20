@@ -32,6 +32,7 @@ home: https://github.com/aws-exporters/charts/tree/main/charts/ecr-exporter
 
 sources:
   - https://github.com/aws-exporters/ecr
+  - https://aws.amazon.com/ecr/
 
 maintainers:
   - name: js-timbirkett

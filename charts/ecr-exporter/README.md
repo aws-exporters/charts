@@ -21,6 +21,7 @@ helm install ecr-exporter aws-exporters/ecr-exporter
 ## Source Code
 
 * <https://github.com/aws-exporters/ecr>
+* <https://aws.amazon.com/ecr/>
 
 ## Values
 
