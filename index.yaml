@@ -2,6 +2,31 @@ apiVersion: v1
 entries:
   ecr-exporter:
   - annotations:
+      artifacthub.io/changes: |-
+        - Add aws_ecr_image_pushed_at_timestamp_seconds
+        - Add aws_ecr_image_scan_completed_at_timestamp_seconds
+    apiVersion: v2
+    appVersion: 0.1.2
+    created: "2021-07-13T10:14:51.687372339Z"
+    description: A Helm chart for the AWS ECR Prometheus exporter
+    digest: 782d388677c12806b85e3a2e8faeda0176ce43229a6c02b6a3677c4866409084
+    home: https://github.com/aws-exporters/charts/tree/main/charts/ecr-exporter
+    keywords:
+    - prometheus
+    - ecr
+    - aws
+    - monitoring
+    maintainers:
+    - name: js-timbirkett
+    name: ecr-exporter
+    sources:
+    - https://github.com/aws-exporters/ecr
+    - https://aws.amazon.com/ecr/
+    type: application
+    urls:
+    - https://github.com/aws-exporters/charts/releases/download/ecr-exporter-0.1.2/ecr-exporter-0.1.2.tgz
+    version: 0.1.2
+  - annotations:
       artifacthub.io/changes: '- initial release'
     apiVersion: v2
     appVersion: 0.1.1
@@ -70,4 +95,4 @@ entries:
     urls:
     - https://github.com/aws-exporters/charts/releases/download/ecr-exporter-0.0.1/ecr-exporter-0.0.1.tgz
     version: 0.0.1
-generated: "2021-06-21T13:40:30.227586328Z"
+generated: "2021-07-13T10:14:51.68747024Z"
