@@ -15,12 +15,12 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.1.1
+version: 0.1.2
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
-appVersion: 0.1.1
+appVersion: 0.1.2
 
 keywords:
   - prometheus
@@ -39,4 +39,5 @@ maintainers:
 
 annotations:
   artifacthub.io/changes: |
-    - initial release
+    - Add aws_ecr_image_pushed_at_timestamp_seconds
+    - Add aws_ecr_image_scan_completed_at_timestamp_seconds
