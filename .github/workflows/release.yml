@@ -25,7 +25,7 @@ jobs:
           version: v3.4.0
       
       - name: Install Polaris
-        uses: uses: fairwindsops/polaris@master
+        uses: fairwindsops/polaris@master
         with:
           version: 4.0.7
           
