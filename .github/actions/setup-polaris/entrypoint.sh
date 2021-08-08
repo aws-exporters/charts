@@ -11,7 +11,7 @@ else
   echo "Installing polaris to path."
 fi
 TARGET_FILE="polaris.tar.gz"
-curl -LJ -vvv -o $TARGET_FILE 'https://github.com/FairwindsOps/polaris/releases/download/'"$INPUT_VERSION"'/polaris_linux_amd64.tar.gz'
+curl -LJ -o $TARGET_FILE 'https://github.com/FairwindsOps/polaris/releases/download/'"$INPUT_VERSION"'/polaris_linux_amd64.tar.gz'
 mkdir polaris
 tar -xzf $TARGET_FILE -C polaris
 rm $TARGET_FILE
