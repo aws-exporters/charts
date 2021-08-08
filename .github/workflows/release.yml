@@ -23,6 +23,23 @@ jobs:
         uses: azure/setup-helm@v1
         with:
           version: v3.4.0
+      
+      - name: Install Polaris
+        uses: uses: fairwindsops/polaris@master
+        with:
+          version: 4.0.7
+          
+      - name: Polaris Audit
+        run: |
+          for chart in $(ls -d charts/*/)
+          do
+            polaris audit \
+              --set-exit-code-on-danger \
+              --set-exit-code-below-score 85 \
+              --format pretty \
+              --helm-chart ${chart} \
+              --helm-values ${chart}/values.yaml
+          done
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1
