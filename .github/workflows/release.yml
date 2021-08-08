@@ -25,9 +25,9 @@ jobs:
           version: v3.4.0
       
       - name: Install Polaris
-        uses: fairwindsops/polaris/.github/actions/setup-polaris@master
+        uses: .github/actions/setup-polaris
         with:
-          version: 3.2.1
+          version: 4.0.7
           
       - name: Polaris Audit
         run: |
