@@ -2,6 +2,29 @@ apiVersion: v1
 entries:
   ecr-exporter:
   - annotations:
+      artifacthub.io/changes: '- Update README'
+    apiVersion: v2
+    appVersion: 0.1.3
+    created: "2021-08-15T06:18:53.617809994Z"
+    description: A Helm chart for the AWS ECR Prometheus exporter
+    digest: 52898dc9ff7c41308ee31dfaa7458c49866eddd9e87e3ce296edd5a977868b86
+    home: https://github.com/aws-exporters/charts/tree/main/charts/ecr-exporter
+    keywords:
+    - prometheus
+    - ecr
+    - aws
+    - monitoring
+    maintainers:
+    - name: js-timbirkett
+    name: ecr-exporter
+    sources:
+    - https://github.com/aws-exporters/ecr
+    - https://aws.amazon.com/ecr/
+    type: application
+    urls:
+    - https://github.com/aws-exporters/charts/releases/download/ecr-exporter-0.2.1/ecr-exporter-0.2.1.tgz
+    version: 0.2.1
+  - annotations:
       artifacthub.io/changes: |-
         - Improve default securityContext
         - Add Polaris Audit step to chart release
@@ -145,4 +168,4 @@ entries:
     urls:
     - https://github.com/aws-exporters/charts/releases/download/ecr-exporter-0.0.1/ecr-exporter-0.0.1.tgz
     version: 0.0.1
-generated: "2021-08-08T21:51:50.50217574Z"
+generated: "2021-08-15T06:18:53.617846294Z"
