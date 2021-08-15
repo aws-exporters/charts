@@ -23,12 +23,12 @@ jobs:
         uses: azure/setup-helm@v1
         with:
           version: v3.4.0
-      
+
       - name: Install Polaris
         uses: ./.github/actions/setup-polaris
         with:
           version: 4.0.7
-          
+
       - name: Polaris Audit
         run: |
           for chart in $(ls -d charts/*/)
