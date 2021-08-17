@@ -24,23 +24,6 @@ jobs:
         with:
           version: v3.4.0
 
-      - name: Install Polaris
-        uses: ./.github/actions/setup-polaris
-        with:
-          version: 4.0.7
-
-      - name: Polaris Audit
-        run: |
-          for chart in $(ls -d charts/*/)
-          do
-            polaris audit \
-              --set-exit-code-on-danger \
-              --set-exit-code-below-score 85 \
-              --format pretty \
-              --helm-chart ${chart} \
-              --helm-values ${chart}/values.yaml
-          done
-
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1
         env:

@@ -1,9 +1,16 @@
 name: Audit Charts
 
-on: [pull_request, workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: {}
 
 jobs:
-  audit:
+  polaris:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
