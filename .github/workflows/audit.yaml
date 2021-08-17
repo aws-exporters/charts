@@ -1,0 +1,41 @@
+name: Audit Charts
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  polaris:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: v3.4.0
+
+      - name: Install Polaris
+        uses: ./.github/actions/setup-polaris
+        with:
+          version: 4.0.7
+
+      - name: Polaris Audit
+        run: |
+          for chart in $(ls -d charts/*/)
+          do
+            polaris audit \
+              --set-exit-code-on-danger \
+              --set-exit-code-below-score 85 \
+              --format pretty \
+              --helm-chart ${chart} \
+              --helm-values ${chart}/values.yaml
+          done
