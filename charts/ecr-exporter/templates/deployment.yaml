@@ -43,10 +43,14 @@ spec:
             httpGet:
               path: /metrics
               port: http
+            periodSeconds: 10
+            timeoutSeconds: 5
           readinessProbe:
             httpGet:
               path: /metrics
               port: http
+            periodSeconds: 10
+            timeoutSeconds: 5
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.env }}
