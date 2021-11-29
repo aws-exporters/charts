@@ -60,3 +60,11 @@ env: []
   #   value: "112233445566"
   # - name: CACHE_REFRESH_INTERVAL
   #   value: "3600"
+
+livenessProbe:
+  httpGet:
+    path: /metrics
+    port: http
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
