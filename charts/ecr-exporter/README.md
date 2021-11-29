@@ -55,10 +55,3 @@ helm install ecr-exporter aws-exporters/ecr-exporter
 | livenessProbe.periodSeconds | int | `10` |  |
 | livenessProbe.timeoutSeconds | int | `5` |  |
 
-livenessProbe:
-  httpGet:
-    path: /metrics
-    port: http
-  initialDelaySeconds: 30
-  periodSeconds: 10
-  timeoutSeconds: 5
