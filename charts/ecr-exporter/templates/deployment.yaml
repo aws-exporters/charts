@@ -40,11 +40,7 @@ spec:
               containerPort: 9000
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: /metrics
-              port: http
-            periodSeconds: 10
-            timeoutSeconds: 5
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
             httpGet:
               path: /metrics
