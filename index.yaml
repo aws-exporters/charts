@@ -3,6 +3,30 @@ entries:
   ecr-exporter:
   - annotations:
       artifacthub.io/changes: |
+        - Allow configurable liveness probe
+    apiVersion: v2
+    appVersion: 0.1.3
+    created: "2021-12-09T12:08:33.069305642Z"
+    description: A Helm chart for the AWS ECR Prometheus exporter
+    digest: bc4e43938adb0c7f517b731065e16eb6673cbe32963907516c0eb96b860afb7d
+    home: https://github.com/aws-exporters/charts/tree/main/charts/ecr-exporter
+    keywords:
+    - prometheus
+    - ecr
+    - aws
+    - monitoring
+    maintainers:
+    - name: js-timbirkett
+    name: ecr-exporter
+    sources:
+    - https://github.com/aws-exporters/ecr
+    - https://aws.amazon.com/ecr/
+    type: application
+    urls:
+    - https://github.com/aws-exporters/charts/releases/download/ecr-exporter-0.2.3/ecr-exporter-0.2.3.tgz
+    version: 0.2.3
+  - annotations:
+      artifacthub.io/changes: |
         - increase timeoutSeconds on liveness and readiness probes
     apiVersion: v2
     appVersion: 0.1.3
@@ -192,4 +216,4 @@ entries:
     urls:
     - https://github.com/aws-exporters/charts/releases/download/ecr-exporter-0.0.1/ecr-exporter-0.0.1.tgz
     version: 0.0.1
-generated: "2021-08-17T11:48:53.154947441Z"
+generated: "2021-12-09T12:08:33.069352544Z"
