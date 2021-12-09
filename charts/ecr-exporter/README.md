@@ -1,6 +1,6 @@
 # ecr-exporter
 
-![Version: 0.2.2](https://img.shields.io/badge/Version-0.2.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.3](https://img.shields.io/badge/AppVersion-0.1.3-informational?style=flat-square)
+![Version: 0.2.3](https://img.shields.io/badge/Version-0.2.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.3](https://img.shields.io/badge/AppVersion-0.1.3-informational?style=flat-square)
 
 A Helm chart for the AWS ECR Prometheus exporter
 
@@ -34,6 +34,11 @@ helm install ecr-exporter aws-exporters/ecr-exporter
 | image.repository | string | `"ghcr.io/aws-exporters/prometheus-ecr-exporter"` |  |
 | image.tag | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
+| livenessProbe.httpGet.path | string | `"/metrics"` |  |
+| livenessProbe.httpGet.port | string | `"http"` |  |
+| livenessProbe.initialDelaySeconds | int | `30` |  |
+| livenessProbe.periodSeconds | int | `10` |  |
+| livenessProbe.timeoutSeconds | int | `5` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
@@ -49,9 +54,3 @@ helm install ecr-exporter aws-exporters/ecr-exporter
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
 | tolerations | list | `[]` |  |
-| livenessProbe.httpGet.path | string | `"/metrics"` |  |
-| livenessProbe.httpGet.port | string | `"http"` |  |
-| livenessProbe.initialDelaySecond | int | `30` |  |
-| livenessProbe.periodSeconds | int | `10` |  |
-| livenessProbe.timeoutSeconds | int | `5` |  |
-
