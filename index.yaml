@@ -240,4 +240,29 @@ entries:
     urls:
     - https://github.com/aws-exporters/charts/releases/download/ecr-exporter-0.0.1/ecr-exporter-0.0.1.tgz
     version: 0.0.1
-generated: "2021-12-09T16:04:11.515820649Z"
+  inspector-exporter:
+  - annotations:
+      artifacthub.io/changes: |
+        - Inspector exporter version 0.0.1
+    apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-01-13T10:59:52.922539858Z"
+    description: A Helm chart for the AWS Inspector Prometheus exporter
+    digest: ffda601502895b2937e35c55519ec6fcb8491f20efa45e18778a04d38af934bf
+    home: https://github.com/aws-exporters/charts/tree/main/charts/inspector-exporter
+    keywords:
+    - prometheus
+    - inspector
+    - aws
+    - monitoring
+    maintainers:
+    - name: js-timbirkett
+    name: inspector-exporter
+    sources:
+    - https://github.com/aws-exporters/inspector
+    - https://aws.amazon.com/inspector/
+    type: application
+    urls:
+    - https://github.com/aws-exporters/charts/releases/download/inspector-exporter-0.0.1/inspector-exporter-0.0.1.tgz
+    version: 0.0.1
+generated: "2022-01-13T10:59:52.922571259Z"
