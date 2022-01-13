@@ -245,6 +245,30 @@ entries:
       artifacthub.io/changes: |
         - Inspector exporter version 0.0.1
     apiVersion: v2
+    appVersion: 0.0.2
+    created: "2022-01-13T19:01:05.496447728Z"
+    description: A Helm chart for the AWS Inspector Prometheus exporter
+    digest: a8476be849a2795d8d571e3bbd982cf5a3214d79685f1a7143d0abab21a134c1
+    home: https://github.com/aws-exporters/charts/tree/main/charts/inspector-exporter
+    keywords:
+    - prometheus
+    - inspector
+    - aws
+    - monitoring
+    maintainers:
+    - name: js-timbirkett
+    name: inspector-exporter
+    sources:
+    - https://github.com/aws-exporters/inspector
+    - https://aws.amazon.com/inspector/
+    type: application
+    urls:
+    - https://github.com/aws-exporters/charts/releases/download/inspector-exporter-0.0.2/inspector-exporter-0.0.2.tgz
+    version: 0.0.2
+  - annotations:
+      artifacthub.io/changes: |
+        - Inspector exporter version 0.0.1
+    apiVersion: v2
     appVersion: 0.0.1
     created: "2022-01-13T10:59:52.922539858Z"
     description: A Helm chart for the AWS Inspector Prometheus exporter
@@ -265,4 +289,4 @@ entries:
     urls:
     - https://github.com/aws-exporters/charts/releases/download/inspector-exporter-0.0.1/inspector-exporter-0.0.1.tgz
     version: 0.0.1
-generated: "2022-01-13T10:59:52.922571259Z"
+generated: "2022-01-13T19:01:05.496486129Z"
