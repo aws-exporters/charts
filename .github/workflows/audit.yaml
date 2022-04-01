@@ -30,12 +30,39 @@ jobs:
 
       - name: Polaris Audit
         run: |
+          set -o pipefail
+          echo '<img src="https://camo.githubusercontent.com/21017bcdf60b658e5719e8d4b8ebf4ba4c1115ea907f2d8190427a82f8979eaf/68747470733a2f2f706f6c617269732e646f63732e6661697277696e64732e636f6d2f696d672f706f6c617269732d6c6f676f2e706e67" width="400" />' > audit-results.out
           for chart in $(ls -d charts/*/)
           do
+            echo '<details>' >> audit-results.out
+            echo "<summary>::RESULT:: Audit results for: ${chart}</summary>" >> audit-results.out
+            echo '' >> audit-results.out
+            echo '```bash' >> audit-results.out
             polaris audit \
               --set-exit-code-on-danger \
               --set-exit-code-below-score 85 \
               --format pretty \
               --helm-chart ${chart} \
-              --helm-values ${chart}/values.yaml
+              --helm-values ${chart}/values.yaml | tee -a audit-results.out
+            echo '```' >> audit-results.out
+            echo '</details>' >> audit-results.out
+            echo '' >> audit-results.out
+            sed -i'' 's/::RESULT::/:white_check_mark:/' audit-results.out
           done
+      - name: Close details on failure
+        if: failure() && (github.event.pull_request.base.ref == 'master' || github.event.pull_request.base.ref == 'main')
+        run: |
+          echo '```' >> audit-results.out
+          echo '</details>' >> audit-results.out
+          sed -i'' 's/::RESULT::/:x:/' audit-results.out
+      - name: Replace ANSI Colors
+        if: always() && (github.event.pull_request.base.ref == 'master' || github.event.pull_request.base.ref == 'main')
+        run: |
+          sed -i'' -r 's/[[:cntrl:]]\[[0-9]{1,3}(;[0-9]{1})?m//g' audit-results.out
+      - name: Update PR
+        if: always() && (github.event.pull_request.base.ref == 'master' || github.event.pull_request.base.ref == 'main')
+        uses: machine-learning-apps/pr-comment@1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path: audit-results.out
